@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <!-- 🎯 全載具核心天線：確保行動裝置與 A4 紙張列印排版 100% 完美自適應 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Let's Go 5: Pre-Advanced A1 | 私立巴比美語短期補習班</title>
+    <style>
+        :root {
+            --uci-blue: #1b3d6d;
+            --uci-gold: #fecc07;
+            --soft-red: #e74c3c;
+            --lg5-orange: #f39c12; /* 🧡 Let's Go 5 課程招牌橘色晶片注入 */
+        }
+        
+        * {
+            box-shadow: none;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Helvetica, Arial, 'Noto Sans TC', 'Microsoft JhengHei', '微軟正黑體', sans-serif;
+        }
+
+        body {
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 20px 0;
+            color: #333;
+            line-height: 1.4;
+        }
+
+        .ad-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        /* 📄 剛性分頁與頁面保護晶片 ── 確保 A4 實體黃金比例 */
+        .page { 
+            position: relative;
+            background: #fff;
+            padding: 30px 40px 0 40px; /* 底部留白交給 kids.png 貼滿 */
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 1040px; /* 線上網頁模擬標準 A4 的黃金高度 */
+        }
+
+        .page-content {
+            flex: 1;
+        }
+
+        /* 🧡 🎨 頂部標題範圍與 Let's Go 5 招牌活力橘色背景橫幅 */
+        .header-flex-box {
+            display: flex;
+            align-items: center; /* 垂直居中 👑 */
+            justify-content: space-between;
+            gap: 20px;
+            margin-bottom: 25px;
+            background-color: var(--lg5-orange);
+            padding: 25px;
+            border-radius: 6px;
+            border-bottom: 4px solid var(--uci-blue);
+            min-height: 150px; /* 給予舒適的垂直居中呼吸艙 */
+        }
+
+        /* 🎯 標題文字區塊 */
+        .title-group {
+            flex: 1;
+            text-align: center;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* 內層垂直置中 👑 */
+        }
+
+        /* 第一行英文放大加滿滿，等距外邊距落鎖 */
+        .title-group h1 span.en-main-title { 
+            display: block;
+            line-height: 1.2;
+            color: #fff;
+            margin: 0 0 12px 0;
+            padding: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.35);
+        }
+        
+        .title-group h1 span.en-main-title b {
+            font-size: 28px;
+            font-weight: bold;
+        }
+        
+        .title-group h1 span.en-main-title i {
+            font-size: 19px;
+            font-weight: 500;
+            font-style: normal;
+            margin-left: 5px;
+            opacity: 0.95;
+        }
+
+        /* 第二行中文縮小，對稱雙星星，等距外邊距落鎖 */
+        .title-group h1 span.zh-sub-title {
+            display: block;
+            font-size: 15.5px;
+            font-weight: bold;
+            line-height: 1.2;
+            color: var(--uci-gold);
+            margin: 0 0 12px 0;
+            padding: 0;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.35);
+        }
+
+        /* 第三行英文細字副標，清空預設邊距，達成三行完全等距 */
+        .title-group h2 {
+            font-size: 13px;
+            font-weight: bold;
+            color: #fff;
+            opacity: 0.95;
+            line-height: 1.4;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 巴比專屬置右去背 Logo */
+        .logo-img {
+            width: 100%;
+            max-width: 150px;
+            height: auto;
+            object-fit: contain;
+            flex-shrink: 0;
+            background-color: transparent;
+        }
+
+        h2.section-heading { 
+            color: #2c3e50; 
+            border-bottom: 2px solid var(--lg5-orange); 
+            padding-bottom: 4px; 
+            margin-top: 20px; 
+            margin-bottom: 12px; 
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        p.paragraph-desc {
+            font-size: 13px;
+            margin: 0 0 8px 0;
+            text-align: justify;
+            color: #333;
+        }
+
+        /* 💡 課程號角看板 */
+        .pyp-badge {
+            background-color: transparent;
+            border-left: none; 
+            padding: 5px 15px;
+            margin: 15px 0;
+            border-radius: 0;
+            text-align: center; 
+        }
+
+        .pyp-badge p {
+            margin: 0;
+            font-size: 14px;
+            color: var(--soft-red);
+            line-height: 1.6;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        /* 🔒 剛性方格表格地基 */
+        table.ad-table { 
+            width: 100%; 
+            border-collapse: collapse; 
+            margin-top: 15px; 
+            margin-bottom: 25px; 
+            font-size: 13px;
+            table-layout: fixed;
+            word-wrap: break-word;
+            border: 1px solid #bdc3c7;
+        }
+
+        table.ad-table th, table.ad-table td { 
+            border: 1px solid #bdc3c7; 
+            padding: 10px; 
+            vertical-align: middle; 
+            text-align: left; 
+            line-height: 1.5;
+        }
+
+        table.ad-table th { 
+            background-color: #f1f5f9; 
+            color: var(--uci-blue); 
+            text-align: center; 
+            font-weight: bold;
+        }
+
+        /* 👑 🎨 教學指標欄位的文字 100% 置中對齊 */
+        .center-text { text-align: center !important; font-weight: bold; color: var(--uci-blue); }
+        .left-align { text-align: left !important; }
+        
+        ul.list-style { padding-left: 18px; margin-bottom: 10px; }
+        ul.list-style li { margin-bottom: 6px; font-size: 12.5px; color: #333; }
+
+        /* 👑 🎨 完美調校：無痕灰色底層地基，不帶藍色直線 */
+        .grammar-section { 
+            background-color: #f8fafc; 
+            border-left: none; 
+            padding: 15px; 
+            margin-top: 10px;
+            margin-bottom: 15px; 
+            border-radius: 6px; 
+            font-size: 12.5px;
+        }
+
+        .note { 
+            font-size: 11px; 
+            color: #7f8c8d; 
+            font-weight: normal; 
+            margin-top: 2px; 
+            display: block; 
+        }
+
+        .eng-text { color: #555; display: block; margin-top: 1px; font-size: 11.5px; font-style: italic; }
+
+        /* 📸 每頁最下方的滿版 kids.png 圖檔晶片 */
+        .footer-image-box {
+            width: calc(100% + 80px); 
+            margin-left: -40px; 
+            margin-top: 15px;
+            overflow: hidden;
+            display: block;
+        }
+
+        .page-footer-img {
+            width: 100%;
+            display: block;
+            margin: 0;
+            padding: 0;
+            border: none;
+        }
+
+        /* 最後一頁壓軸極簡單一 Join us 戰艙 */
+        .last-page-footer-box {
+            width: calc(100% + 80px);
+            margin-left: -40px;
+            margin-top: 15px;
+            position: relative; 
+            overflow: visible; 
+            display: block;
+        }
+
+        /* 🔒 隱藏版按鈕艙：文字連結完全隱藏，高度整合於單一懸浮按鈕中，點擊觸發雙開瀏覽器 */
+        .join-us-btn-container {
+            position: absolute;
+            bottom: 74%; 
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 999; 
+            text-align: center;
+            width: 80%;
+        }
+
+        .cta-join-us-img {
+            width: 100%;
+            max-width: 145px; /* 🎯 檔名完美對齊：join now 5.png */
+            height: auto;
+            cursor: pointer;
+            transition: transform 0.2s, filter 0.2s;
+            margin: 0 auto;
+            display: block;
+        }
+
+        .cta-join-us-img:hover {
+            transform: scale(1.06);
+            filter: brightness(1.1);
+        }
+
+        /* 🚨 核心剛性 A4 防跑版列印保護 */
+        @media print {
+            body { background-color: #fff; padding: 0; margin: 0; }
+            .ad-container { max-width: 100%; width: 100%; box-shadow: none; border-radius: 0; }
+            .page {
+                width: 210mm;      
+                height: 296mm;     
+                page-break-after: always; 
+                page-break-inside: avoid;
+                padding: 20mm 20mm 0 20mm !important; 
+                margin: 0;
+                overflow: hidden;
+            }
+            .page:last-child { page-break-after: avoid; }
+            .header-flex-box { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            table.ad-table th { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .footer-image-box { width: calc(100% + 40mm) !important; margin-left: -20mm !important; }
+            .last-page-footer-box { width: calc(100% + 40mm) !important; margin-left: -20mm !important; }
+            .join-us-btn-container { display: none !important; }
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 0; }
+            .ad-container { border-radius: 0; box-shadow: none; }
+            .page { padding: 20px 20px 0 20px; min-height: auto; }
+            .header-flex-box { padding: 15px 20px; flex-direction: column-reverse; text-align: center; }
+            .title-group { text-align: center; width: 100%; }
+            .logo-img { max-width: 130px; margin-bottom: 10px; }
+            table.ad-table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+            table.ad-table td { min-width: 180px; }
+            table.ad-table th { min-width: 110px; }
+            .footer-image-box { width: calc(100% + 40px); margin-left: -20px; }
+            .last-page-footer-box { width: calc(100% + 40px); margin-left: -20px; }
+            .join-us-btn-container { bottom: 69%; } 
+        }
+    </style>
+</head>
+<body>
+
+<div class="ad-container">
+
+    <!-- ================= PAGE 1 ================= -->
+    <div class="page">
+        <div class="page-content">
+            <!-- 🚀 第一頁標題：精準三行在招牌活力橘色背景區塊內 100% 上下垂直置中、等距對稱美學 -->
+            <div class="header-flex-box">
+                <div class="title-group">
+                    <h1>
+                        <span class="en-main-title"><b>Let's Go 5</b> <i>Pre-Advanced A1</i></span>
+                        <span class="zh-sub-title">✨ 邁向卓越！高級美語閱讀、文法邏輯與寫作素養前導班 ✨</span>
+                    </h1>
+                    <h2>The Gateway to Excellence! Advanced Reading, Grammar Logic & Paragraph Writing Pre-Class 🚀</h2>
+                </div>
+                <img src="BOBBY ENGLISH SCHOOL_去背檔.png" alt="巴比美語補習班專屬去背標章" class="logo-img">
+            </div>
+
+            <h2 class="section-heading">💡 課程理念 | Course Concept</h2>
+            <p class="paragraph-desc"><strong>全面解鎖高級學科素養！Let's Go 5是孩子邁向青少年進階班的黃金橋樑。</strong></p>
+            <p class="paragraph-desc">這堂課程不只帶領孩子建立大膽開口的自信，更帶領他們像閱讀世界百科全書一樣，學會看懂長篇故事、培養獨立思考能力，並能親自寫出一整段邏輯清晰的漂亮美語文章！[cite: 4]</p>
+            <p class="paragraph-desc"><strong>Unlock advanced academic literacy! Let's Go 5 serves as the golden bridge leading students toward junior advanced classes.</strong>[cite: 4]</p>
+            <p class="paragraph-desc">This course not only builds students' confidence to speak out boldly, but also guides them to read longer passages like a world encyclopedia, foster independent critical thinking, and write beautifully structured English paragraphs on their own![cite: 4]</p>
+
+            <h2 class="section-heading">🎯 課程核心教學重點 | Course Highlights</h2>
+            <p class="paragraph-desc">為了幫孩子打造最穩固的美語實力，我們的課程特別專注於以下三大核心能力的升級：[cite: 4]</p>
+            
+            <!-- 四個核心指標完美拼合於同一個剛性表格，左側指標文字 100% 置中對齊 -->
+            <table class="ad-table">
+                <thead>
+                    <tr>
+                        <th style="width: 32%;">教學指標 | Learning Focus</th>
+                        <th style="width: 68%;">核心養成特色 | Core Features</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="center-text">✍️ 精準文法實戰<br>Grammar Essentials</td>
+                        <td>靈活掌握可數與不可數名詞的數量表達，並熟練運用形容詞最高級與複雜連接詞，讓句子結構更豐富、更漂亮！[cite: 4]<br>
+                        <span class="eng-text">Master quantifiers for countable and uncountable nouns, and skillfully use superlative adjectives and complex conjunctions to make sentence structures richer and more beautiful!</span></td>
+                    </tr>
+                    <tr>
+                        <td class="center-text">📝 段落寫作引導<br>Paragraph Writing</td>
+                        <td>告別單句書寫！透過邏輯搭積木引導，訓練孩子將零散的句子串聯成語意完整且具說服力的小短文。[cite: 4]<br>
+                        <span class="eng-text">Move beyond single-sentence writing! Through structured support, we train students to connect individual sentences into coherent and persuasive paragraphs.</span></td>
+                    </tr>
+                    <tr>
+                        <td class="center-text">📖 高階閱讀與語境思維<br>Critical Thinking</td>
+                        <td>深入閱讀長篇跨學科故事，培養小偵探般的敏銳度，學會從上下文的線索中推敲並理解更複雜的高階字彙。[cite: 4]<br>
+                        <span class="eng-text">Dive deep into long, cross-disciplinary stories, cultivating a detective-like acuity to deduce and understand complex, high-level vocabulary from contextual clues.</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 📸 PAGE 1 最下方滿版 kids.png 下移平鋪 -->
+        <div class="footer-image-box">
+            <img src="kids.png" alt="巴比美語學員快樂探究合照" class="page-footer-img">
+        </div>
+    </div>
+
+    <!-- ================= PAGE 2 ================= -->
+    <div class="page">
+        <div class="page-content" style="padding-top: 15px;">
+            <h2 class="section-heading" style="margin-top: 0;">🗺️ 8大單元主題與發音寶庫 | Themes & Phonics</h2>
+            <p class="paragraph-desc">跟著 Let's Go 5豐富的主題探索世界，全方位接軌日常生活與學科素養：[cite: 4]</p>
+            <ul class="list-style">
+                <li><strong>第一單元: 有多少食物 | Unit 1: How Much Food?</strong> 🍎 <em>(發音 | Phonics: mp/mb)</em>[cite: 4]</li>
+                <li><strong>第二單元: 比較動物 | Unit 2: Comparing Animals</strong> 🦁 <em>(發音 | Phonics: ir/ar)</em>[cite: 4]</li>
+                <li><strong>第三單元: 上個週末 | Unit 3: Last Weekend</strong> 🎡 <em>(發音 | Phonics: str/st)</em>[cite: 4]</li>
+                <li><strong>第四單元: 休閒活動 | Unit 4: Activities</strong> 🌲 <em>(發音 | Phonics: lt / id)</em>[cite: 4]</li>
+                <li><strong>第五單元: 未來想從事的工作 | Unit 5: The Future</strong> 👨‍🚀 <em>(發音 | Phonics: wr/wh)</em>[cite: 4]</li>
+                <li><strong>第六單元: 不同季節的樂趣 | Unit 6: Fun in the Seasons</strong> 🍂 <em>(發音 | Phonics: sp / spr)</em>[cite: 4]</li>
+                <li><strong>第七單元: 認識神奇五感 | Unit 7: The Five Senses</strong> 👀 <em>(發音 | Phonics: nch / ch)</em>[cite: 4]</li>
+                <li><strong>第八單元: 全新的精彩體驗 | Unit 8: New Experiences</strong> ✈️ <em>(發音 | Phonics: t / tch)</em>[cite: 4]</li>
+            </ul>
+            <p class="paragraph-desc"><strong>🎁 額外發音補充教材 | Bonus Phonics Materials：</strong><br>
+            精心搭配《New Phonics Kids 5 The Vowels Pairs and Consonant Digraphs & Phonics Kids Activity Book 5》與《Phonics Kids Mix: Match Book 5》，將自然發音的拼讀直覺打得無懈可擊！[cite: 4]</p>
+
+            <!-- 📝 實戰文法精華，移至第二頁尾端，移除藍色直線直線 -->
+            <h2 class="section-heading">📝 實戰文法基礎大公開 | Grammar Essentials</h2>
+            <div class="grammar-section">
+                <ul class="list-style" style="padding-left: 5px; margin-bottom: 0;">
+                    <li>精準掌握可數與不可數名詞的數量表達。[cite: 4]<br><span class="eng-text">Precisely master expression of quantity for countable and uncountable nouns.</span></li>
+                    <li>熟練運用形容詞最高級、複雜連接詞與過去時態助動詞did的實戰運用。[cite: 4]<br><span class="eng-text">Skillfully use superlative adjectives, complex conjunctions, and past tense with auxiliary verb "did".</span></li>
+                    <li>脫離單句書寫，開始訓練孩子將句子有邏輯地串聯成短段落。[cite: 4]<br><span class="eng-text">Move beyond single sentences and train students to logically connect sentences into paragraphs.</span></li>
+                    <li>具備長篇閱讀與語境思維，能從上下文推敲與理解更複雜的字彙。[cite: 4]<br><span class="eng-text">Develop advanced reading and contextual thinking to deduce complex vocabulary from contextual clues.</span></li>
+                    <li>靈活操作附屬連接詞 because 的因果邏輯及不定代名詞 one的替換技巧。[cite: 4]<br><span class="eng-text">Flexibly apply causal logic using "because" and master substitution techniques with the indefinite pronoun "one".</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 📸 PAGE 2 最下方滿版 kids.png -->
+        <div class="footer-image-box">
+            <img src="kids.png" alt="巴比美語學員快樂探究合照" class="page-footer-img">
+        </div>
+    </div>
+
+    <!-- ================= PAGE 3 ================= -->
+    <div class="page">
+        <div class="page-content" style="padding-top: 15px;">
+            <h2 class="section-heading" style="margin-top: 0;">📌 班級招生資訊 | Course Details</h2>
+            <table class="center-table ad-table">
+                <thead>
+                    <tr>
+                        <th style="width: 35%;">招生項目 | Information Item</th>
+                        <th style="width: 65%;">班級詳細資訊 | Class Details</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="font-weight: bold;">📅 課程日期 | Course Dates</td>
+                        <td class="left-align">2026年8月31日正式開課（每週一、三、五）[cite: 4]<br>Starts on August 31, 2026 (Every Monday, Wednesday, Friday)</td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: bold;">⏰ 上課時間 | Class Time</td>
+                        <td class="left-align">每週一、三、五下午4:30-6:30p.m. (每次2小時)[cite: 4]<br>Every Mon, Wed, Fri from 4:30 to 6:30 p.m. (2 hours per lesson)</td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: bold;">🔢 總堂數 | Total Lessons</td>
+                        <td class="left-align">全期共51堂課<br>51 lessons in total for the entire semester[cite: 4]</td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: bold;">🎒 招生對象 | Target Students</td>
+                        <td class="left-align">國小二至六年級（美語學習2年以上，具備基礎聽說實力者）[cite: 4]<br>Elementary School Grades 2-6 (Minimum 2 years of English learning experience)</td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: bold;">👑 招生人數 | Class Size</td>
+                        <td class="left-align">小班教學，招生人數10人<br>Small group class, 10 students max[cite: 4]</td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: bold;">💰 課程學費 | Tuition Fee</td>
+                        <td class="left-align">
+                            <strong style="color: var(--soft-red); font-size: 15px;">NT$36,292元</strong>[cite: 4]<br>
+                            <span class="note">備註：學費$620×51堂+教材費$1,612+學雜費 $3,060</span>[cite: 4]
+                            <span class="note">Note: Tuition $620 × 51 lessons + Textbooks $1,612 + Fees $3,060</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- 🧡 🎨 完美改裝：為五級高級素養班特調的全新超炫熱情招生口號，絕不落俗套！ -->
+            <div class="pyp-badge">
+                <p>與我們攜手啟動高階語境思維，引領孩子像閱讀世界百科全書般，自信展現卓越的文法與寫作超能力！</p>
+                <p style="font-size: 11px; font-weight: normal; color: #666; margin-top: 2px;">Ignite advanced contextual thinking with us and empower your child to confidently showcase excellence in grammar and paragraph writing like a world encyclopedia!</p>
+            </div>
+        </div>
+
+        <!-- 📸 PAGE 3 最下方滿版 kids.png -->
+        <div class="last-page-footer-box">
+            <!-- 👑 🎨 完美重裝落鎖：單一按鈕 join now 5.png，一鍵全自動雙分頁開啟！ -->
+            <div class="join-us-btn-container">
+                <img src="join now 5.png" alt="立即開啟巴比美語卓越之門" class="cta-join-us-img" onclick="openDualLinks(event)">
+            </div>
+            <img src="kids.png" alt="巴比美語學員快樂探究合照" class="page-footer-img">
+        </div>
+    </div>
+
+</div>
+
+<!-- 📡 👑 負責人 Joy 主任欽點：單一按鈕同時彈出「線上報名表」與「定型化契約」之高科技五級大腦晶片 -->
+<script>
+function openDualLinks(event) {
+    if (event) event.preventDefault();
+    
+    // 📡 雙軌分流天線同時通電，完美在一秒內同時彈出 Let's Go 5 報名表與契約書！
+    window.open("https://joylin36.github.io/2026BobbyEnglish-Lets-Go-lg5.html/", "_blank");
+    window.open("https://joylin36.github.io/2026BobbyEnglish-Contract-lg5.html/", "_blank");
+}
+</script>
+</body>
+</html>
